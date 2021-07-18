@@ -1,14 +1,14 @@
-#what to do?
+# what to do?
 
 Just execute the following
 
 '''
-npm init
-npm install --save-dev gulp gulp-sass sass browser-sync
+  npm init
+  npm install --save-dev gulp gulp-sass sass browser-sync
 '''
-##finally
+## finally
 run 
 '''
-gulp watch
+  gulp watch
 '''
 inside your scss folder!
