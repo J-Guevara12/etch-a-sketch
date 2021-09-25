@@ -1,8 +1,25 @@
 {
   "devDependencies": {
-    "browser-sync": "^2.27.4",
+    "browser-sync": "^2.27.5",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
-    "sass": "^1.35.2"
-  }
+    "sass": "^1.42.1"
+  },
+  "name": "landing-page",
+  "description": "Just execute the following",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-Guevara12/starter.git"
+  },
+  "author": "Juan Esteban Guevara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-Guevara12/starter/issues"
+  },
+  "homepage": "https://github.com/J-Guevara12/starter#readme"
 }
