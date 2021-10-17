@@ -4,11 +4,38 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel='stylesheet' href='styles/scss/style.css'>
-	<title></title>
+	<script src="scripts/script.js" defer></script>
+	<title>Etch A sketch</title>
 </head>
 
 <body>
-	<h1>Hello World</h1>
+	<h1>Etch a Sketch</h1>
+	<div id='container'>
+	</div>
+
+	<div id="option">
+		<div class="option-column">
+			<button id='clear-button'>Clear</button>
+			<label id='grid-size'>16</label><input id="size-range" type="range" min="1" max="100" value="16">
+			<input type="checkbox" id='border-checkbox' checked>
+		</div>
+		<div class="option-column">
+			<input id="color-selector" type="color" value="#000000">
+			<div class="row">
+				<input id="color-mode" type="radio" name="mode" value="color-mode" checked>
+				<label for="color-mode">Color mode</label>
+			</div>
+			<div class="row">
+				<input id="random-mode" type="radio" name="mode" value="random-mode">
+				<label for="random-mode">Random mode</label>
+			</div>
+			<div class="row">
+				<input id="grayscale-mode" type="radio" name="mode" value="random-mode">
+				<label for="grayscale-mode">Grayscale mode</laber>
+			</div>
+		</div>
+	</div>
+
 </body>
 
 </html>
