@@ -35,7 +35,9 @@ function activatePaint() {
         element.style.backgroundColor = color :
         randomMode.checked ?
           element.style.backgroundColor = randomColor() :
-          element.style.backgroundColor = grayscalePaint(element.style.backgroundColor);
+          lighterMode.checked ?
+            element.style.backgroundColor = grayscalePaint(element.style.backgroundColor, 25.5) :
+            element.style.backgroundColor = grayscalePaint(element.style.backgroundColor, -25.5);
     })
   })
 }
@@ -49,23 +51,21 @@ function randomColor() {
 
 }
 
-function grayscalePaint(entryColor) {
+function grayscalePaint(entryColor, delta) {
   let colors = entryColor.split(',')
   let red = colors[0].substring(4)
   let green = colors[1]
   let blue = colors[2].replace(')', '')
-  red = Math.round(+red - 25.5)
-  green = Math.round(+green - 25.5)
-  blue = Math.round(+blue - 25.5)
-  if (red < 0) {
-    red = 0
-  }
-  if (green < 0) {
-    green = 0
-  }
-  if (blue < 0) {
-    blue = 0
-  }
+  red = Math.round(+red + delta)
+  green = Math.round(+green + delta)
+  blue = Math.round(+blue + delta)
+  red = red > 255 ? 255 : red;
+  red = red < 0 ? 0 : red;
+  green = green > 255 ? 255 : green;
+  green = green < 0 ? 0 : green;
+  blue = blue > 255 ? 255 : blue;
+  blue = blue < 0 ? 0 : blue;
+  console.log(red, " y ", green)
   return `rgb(${red},${green},${blue})`
 }
 
@@ -78,7 +78,8 @@ const borderCheckbox = document.querySelector('#border-checkbox')
 const colorSelector = document.querySelector('#color-selector')
 const colorMode = document.querySelector('#color-mode')
 const randomMode = document.querySelector('#random-mode')
-const grayscaleMode = document.querySelector('#grayscale-mode')
+const darkerMode = document.querySelector('#darker-mode')
+const lighterMode = document.querySelector('#lighter-mode')
 
 const cell = document.createElement('div')
 cell.style.backgroundColor = '#ffffff'
