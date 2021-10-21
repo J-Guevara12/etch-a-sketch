@@ -9,18 +9,26 @@
 </head>
 
 <body>
-	<h1>Etch a Sketch</h1>
-	<div id='container'>
+	<div id="header">
+		<h1>Etch a Sketch</h1>
 	</div>
-
-	<div id="option">
-		<div class="option-column">
-			<button id='clear-button'>Clear</button>
-			<label id='grid-size'>16</label><input id="size-range" type="range" min="1" max="100" value="16">
-			<input type="checkbox" id='border-checkbox' checked>
-		</div>
-		<div class="option-column">
-			<input id="color-selector" type="color" value="#000000">
+	<div id="content">
+		<div class='column' id='column-1'>
+			<div id='color-selector-row'>
+				<input id="color-selector" type="color" value="#000000">
+			</div>
+			<div class="row">
+				<input type="checkbox" id='border-checkbox' checked>
+				<span id='checkbox-span'></span>
+				<label id='border-label'>Grid border</label>
+			</div>
+			<div class="column">
+				<label id='size-label'>Grid size</label>
+				<div class="row">
+					<input id="size-range" type="range" min="1" max="100" value="16">
+					<label id='grid-size'>16</label>
+				</div>
+			</div>
 			<div class="row">
 				<input id="color-mode" type="radio" name="mode" value="color-mode" checked>
 				<label for="color-mode">Color mode</label>
@@ -32,6 +40,11 @@
 			<div class="row">
 				<input id="grayscale-mode" type="radio" name="mode" value="random-mode">
 				<label for="grayscale-mode">Grayscale mode</laber>
+			</div>
+			<button id='clear-button'>Clear</button>
+		</div>
+		<div class="column" id='column-2'>
+			<div id='container'>
 			</div>
 		</div>
 	</div>
